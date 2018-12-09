@@ -70,9 +70,9 @@
     {
         id: 18,
         name: 'Hulk',
-        description: 'Mantis is a fictional character, a superhero in the Marvel Universe, and former member of the Avengers. The character was ranked 99th in Comics Buyer\'s Guide\'s "100 Sexiest Women in Comics list.',
+        description: 'The character is both the Hulk, a green-skinned, hulking and muscular humanoid possessing a vast degree of physical strength, and his alter ego Dr. Robert Bruce Banner, a physically weak, socially withdrawn, and emotionally reserved physicist, the two existing as independent personalities and resenting of the other.',
         gender: 'M',
-        imgUrl: 'The character is both the Hulk, a green-skinned, hulking and muscular humanoid possessing a vast degree of physical strength, and his alter ego Dr. Robert Bruce Banner, a physically weak, socially withdrawn, and emotionally reserved physicist, the two existing as independent personalities and resenting of the other.',
+        imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_pRcxbDr09-wLz5x7vyajHfk7tU8A17agYMK2z8-2r7E9VV1J',
         planet: 'Earth',
         powers: ['Superhuman strength', 'stamina and durability','Genius-level intellect'],
         rating: 3,
