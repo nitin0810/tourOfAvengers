@@ -74,7 +74,7 @@ export class Power extends React.Component {
 
 }
 
-Power.propType = {
+Power.propTypes = {
     powers: PropTypes.array.isRequired,
     onAddPower: PropTypes.func // required only when allowAdd is true
 };

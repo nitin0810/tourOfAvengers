@@ -18,7 +18,14 @@ export class MainContent extends React.Component {
             loading: false,
             errMsg: ''
         };
+        this.addNewAvenger = this.addNewAvenger.bind(this);
     }
+
+    addNewAvenger(newAv) {
+        const n = { id: this.state.avengers.length + 1 + 10, ...newAv };
+        this.setState((prevState) => ({ avengers: [...prevState.avengers, n] }));
+    }
+
 
     componentDidMount() {
         this.setState({ loading: true, errMsg: '' });
@@ -46,11 +53,9 @@ export class MainContent extends React.Component {
                 <Switch>
                     <Route path="/dashboard" render={(props) => <Dashboard avengers={this.state.avengers} {...props} />} ></Route>
                     <Route path="/list" render={(props) => <List avengers={this.state.avengers} {...props} />} ></Route>
-                    <Route path="/add" component={Add} ></Route>
+                    <Route path="/add" render={(props) => <Add onAddAvenger={this.addNewAvenger} {...props} />} ></Route>
                     <Route path="/compare" component={Compare} ></Route>
                     <Route render={() => <h1 style={{ textAlign: "center" }}>404 Error</h1>} />
-                    {/* Below Route will not be rendered in any case except users manually enters a url which is not the part of app */}
-                    <Route component={Compare} ></Route>
                 </Switch>
             </div >
         );
