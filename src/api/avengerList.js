@@ -14,7 +14,7 @@
     },
     {
         id: 12,
-        name: 'Captian Amerivca',
+        name: 'Captain America',
         description: 'Patriotic supersoldier who often fought the Axis powers of World War II and was Timely Comics\' most popular character during the wartime period.',
         gender: 'M',
         imgUrl: 'https://c-5uwzmx78pmca09x24quoqfx2ezivsmzx2ekwu.g00.ranker.com/g00/3_c-5eee.zivsmz.kwu_/c-5UWZMXPMCA09x24pbbx78ax3ax2fx2fquoqf.zivsmz.kwux2fcamz_vwlm_quox2f12x2f447941x2fwzqoqvitx2fkix78biqv-iumzqki-x78pwbw-c35x3fex3d068x26px3d068x26nqbx3dkzwx78x26kzwx78x3dnikmax26yx3d38x26nubx3drx78ox26q98k.uizsx3dquiom_$/$/$/$/$/$',
