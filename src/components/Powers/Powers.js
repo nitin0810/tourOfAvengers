@@ -1,18 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { AddPower } from './AddPower/AddPower';
 
 export class Power extends React.Component {
+
     constructor(props) {
         super(props);
-
-        this.state = {
-            newPower: ''
-        };
-
         this.powerListRef = React.createRef();
-
-        this.handleAddPower = this.handleAddPower.bind(this);
-        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
@@ -29,16 +23,6 @@ export class Power extends React.Component {
     }
 
 
-    handleChange(e) {
-        this.setState({ newPower: e.target.value });
-    }
-
-    handleAddPower() {
-        if(this.state.newPower.trim()===''){return;}
-        this.setState({ newPower: '' });
-        this.props.onAddPower(this.state.newPower);
-    }
-
     scrollPowerList() {
         const ulElement = this.powerListRef.current;
         ulElement.scrollTop = ulElement.scrollHeight;
@@ -49,12 +33,7 @@ export class Power extends React.Component {
         const existingPowers = this.props.powers;
         return (
             <div>{this.props.allowAdd ?
-                <div>
-                    <input type="text" value={this.state.newPower}
-                        placeholder='Add Power'
-                        onChange={this.handleChange} />
-                    <button type='button' onClick={this.handleAddPower}>Add</button>
-                </div>
+                <AddPower onAddPower={(addedPower)=>this.props.onAddPower(addedPower)}/>
                 : null
             }
 

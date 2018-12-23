@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     console.log(props);
-    
+
     this.state = {
       avengers: []
     };
@@ -20,8 +20,9 @@ class App extends React.Component {
       <React.Fragment>
         <Header />
         <Navbar />
-
-        <MainContent avengers={'2'} />
+        <main className="container">
+          <MainContent />
+        </main>
       </React.Fragment>
     );
   }

@@ -83,7 +83,7 @@
         name: 'Mantis',
         description: 'Mantis is a fictional character, a superhero in the Marvel Universe, and former member of the Avengers. The character was ranked 99th in Comics Buyer\'s Guide\'s "100 Sexiest Women in Comics list.',
         gender: 'F',
-        imgUrl: 'https://c-5uwzmx78pmca09x24quoqfx2ezivsmzx2ekwu.g00.ranker.com/g00/3_c-5eee.zivsmz.kwu_/c-5UWZMXPMCA09x24pbbx78ax3ax2fx2fquoqf.zivsmz.kwux2fcamz_vwlm_quox2f988x2f9763838x2fwzqoqvitx2fakiztmb-eqbkp-kwuqk-jwws-kpizikbmza-x78pwbw-c6x3fex3d068x26px3d068x26nqbx3dkzwx78x26kzwx78x3dnikmax26yx3d38x26nubx3drx78ox26q98k.uizsx3dquiom_$/$/$/$/$/$',
+        imgUrl: 'https://cdn.vox-cdn.com/thumbor/AlX0xlhv14a64bnDJKQ0AaeOy8A=/0x0:2879x1194/1200x800/filters:focal(865x329:1325x789)/cdn.vox-cdn.com/uploads/chorus_image/image/54825235/mantis.0.png',
         planet: 'Knowhere',
         powers: ['Telepathy','Healing factor','Master martial artist'],
         rating: 2,

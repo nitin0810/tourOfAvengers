@@ -5,7 +5,6 @@ import { Dashboard } from '../../views/Dashboard/Dashboard';
 import { List } from '../../views/List/List';
 import { Add } from '../../views/Add/Add';
 import { Compare } from '../../views/Compare/Compare';
-import Proptype from 'prop-types';
 import { getAvengers } from '../../api';
 import { EmptyAvengersList } from '../EmptyAvengersList/EmptyAvengersList';
 
@@ -19,6 +18,7 @@ export class MainContent extends React.Component {
             errMsg: ''
         };
         this.addNewAvenger = this.addNewAvenger.bind(this);
+        this.handleAvengerEdit = this.handleAvengerEdit.bind(this);
     }
 
     addNewAvenger(newAv) {
@@ -26,6 +26,15 @@ export class MainContent extends React.Component {
         this.setState((prevState) => ({ avengers: [...prevState.avengers, n] }));
     }
 
+    handleAvengerEdit(editedAv) {
+        const i = this.state.avengers.findIndex(a => a.id === editedAv.id);
+        debugger;
+        this.setState((prevState) => (
+            {
+                avengers: [...prevState.avengers.slice(0, i), editedAv, ...prevState.avengers.slice(i + 1)]
+            }
+        ));
+    }
 
     componentDidMount() {
         this.setState({ loading: true, errMsg: '' });
@@ -47,22 +56,21 @@ export class MainContent extends React.Component {
         }
 
         return (
-            <div>
+            <React.Fragment>
                 {/* Switch component renders the first Route children which matches the current url
             Hence only 1 component amongst the children of Switch can be rendered */}
                 <Switch>
                     <Route path="/dashboard" render={(props) => <Dashboard avengers={this.state.avengers} {...props} />} ></Route>
-                    <Route path="/list" render={(props) => <List avengers={this.state.avengers} {...props} />} ></Route>
+                    <Route path="/list" render={(props) =>
+                        <List avengers={this.state.avengers} onAvengerDetailEdited={this.handleAvengerEdit} {...props} />} >
+                    </Route>
                     <Route path="/add" render={(props) => <Add onAddAvenger={this.addNewAvenger} {...props} />} ></Route>
                     <Route path="/compare" component={Compare} ></Route>
                     <Route render={() => <h1 style={{ textAlign: "center" }}>404 Error</h1>} />
                 </Switch>
-            </div >
+            </React.Fragment >
         );
     }
 };
 
 
-// MainContent.proptype = {
-//     avengers: Proptype.func
-// };

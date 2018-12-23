@@ -30,7 +30,7 @@ export class Add extends React.Component {
 
         if (control === 'name' || control === 'description' || control === 'planet' ||
             control === 'rating' || control === 'gender') {
-            this.setState({ [control]: e.target.value });
+            this.setState({ [control]: control === 'rating' ? +e.target.value : e.target.value });
         } else if (control === 'hasDedicatedMovie') {
             this.setState({ hasDedicatedMovie: e.target.checked });
         }
@@ -161,10 +161,10 @@ export class Add extends React.Component {
 
                 <div>
                     <input type="file" accept="image/*" style={{ display: 'none' }} ref={this.fileRef} onChange={this.handleImgUpload}></input>
-                        <div style={{ height: '80px', width: '80px' }}>
-                            <img src={this.state.imgUrl || 'imgs/defaultPic.jpg'} alt="Avenger Img"
-                                style={{ height: '100%', width: '100%', border: '2px solid black', borderRadius: '50%' }} />
-                        </div>
+                    <div style={{ height: '80px', width: '80px' }}>
+                        <img src={this.state.imgUrl || 'imgs/defaultPic.jpg'} alt="Avenger Img"
+                            style={{ height: '100%', width: '100%', border: '2px solid black', borderRadius: '50%' }} />
+                    </div>
                     <button type="button"
                         onClick={() => this.fileRef.current.click()}>
                         {this.state.imgUrl ? 'Change Image' : 'Upload Image'}</button>
@@ -175,7 +175,7 @@ export class Add extends React.Component {
                     <Power powers={this.state.powers}
                         allowAdd={true}
                         onAddPower={this.onAddPowerHandler}
-                    >                        </Power>
+                    />
                 </div>
 
                 {this.state.invalidMsg ?
