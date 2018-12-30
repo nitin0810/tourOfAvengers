@@ -28,7 +28,6 @@ export class MainContent extends React.Component {
 
     handleAvengerEdit(editedAv) {
         const i = this.state.avengers.findIndex(a => a.id === editedAv.id);
-        debugger;
         this.setState((prevState) => (
             {
                 avengers: [...prevState.avengers.slice(0, i), editedAv, ...prevState.avengers.slice(i + 1)]
