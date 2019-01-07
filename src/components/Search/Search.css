@@ -1,0 +1,44 @@
+
+.form{
+    position: relative;
+    width: 100%;
+}
+
+.searchInput{
+height: 40px;
+
+}
+
+.searchResults{
+    text-align: left;
+    list-style-type: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    top: 40px;
+    border: 0.5px solid;
+    background-color: white;
+    z-index: 99;
+}
+
+.searchResultsShow{
+  display: block;
+}
+
+.searchResultsHide{
+    display: none;
+  }
+
+ .searchResults  .searchResultItem{    
+     padding: 4px 8px;
+     cursor: pointer;
+ }
+
+ li.searchResultItem:hover {
+background-color:rgb(217, 228, 235);
+ }
+
+ .hoveredSearchResultItem{
+    background-color:rgb(217, 228, 235);
+ }

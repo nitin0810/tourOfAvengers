@@ -1,5 +1,5 @@
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import React from 'react';
 import { Dashboard } from '../../views/Dashboard/Dashboard';
 import { List } from '../../views/List/List';
@@ -65,6 +65,9 @@ export class MainContent extends React.Component {
                     </Route>
                     <Route path="/add" render={(props) => <Add onAddAvenger={this.addNewAvenger} {...props} />} ></Route>
                     <Route path="/compare" component={Compare} ></Route>
+                    <Route path="/" exact render={(props) => (
+                        <Redirect to="/dashboard" {...props} ></Redirect>
+                    )} ></Route>
                     <Route render={() => <h1 style={{ textAlign: "center" }}>404 Error</h1>} />
                 </Switch>
             </React.Fragment >
