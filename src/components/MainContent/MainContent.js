@@ -36,6 +36,10 @@ export class MainContent extends React.Component {
     }
 
     componentDidMount() {
+        this.fetchData();
+    }
+
+    fetchData() {
         this.setState({ loading: true, errMsg: '' });
         getAvengers()
             .then(avengers => this.setState({ avengers }))
@@ -48,7 +52,12 @@ export class MainContent extends React.Component {
             return <p>Loading ...</p>;
         }
         if (this.state.errMsg) {
-            return <p>Oops !!!. {this.state.errMsg}</p>
+            return (
+                <div>
+                    <p>Oops ..! {this.state.errMsg}</p>
+                    <button className="btn btn-clear btn-small" onClick={this.fetchData.bind(this)}>Try Again</button>
+                </div>
+            )
         }
         if (!this.state.avengers.length) {
             return <EmptyAvengersList />
@@ -64,7 +73,7 @@ export class MainContent extends React.Component {
                         <List avengers={this.state.avengers} onAvengerDetailEdited={this.handleAvengerEdit} {...props} />} >
                     </Route>
                     <Route path="/add" render={(props) => <Add onAddAvenger={this.addNewAvenger} {...props} />} ></Route>
-                    <Route path="/compare" component={Compare} ></Route>
+                    <Route path="/compare" render={(props)=><Compare avengers={this.state.avengers}/>} ></Route>
                     <Route path="/" exact render={(props) => (
                         <Redirect to="/dashboard" {...props} ></Redirect>
                     )} ></Route>

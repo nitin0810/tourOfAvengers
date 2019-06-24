@@ -2,9 +2,15 @@ import Avengers from './avengerList';
 
 export const getAvengers=()=>{
     return new Promise((res,rej)=>{
+
+        const random = Math.random();
+
         setTimeout(() => {
-            res(Avengers);
-            // rej('Error');
+            if(random<0.8){
+                res(Avengers);
+            }else{
+                rej({msg:'Some error occured while loading'});
+            }
         }, 1000);
     });
 }

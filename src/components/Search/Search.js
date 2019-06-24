@@ -82,7 +82,7 @@ export class Search extends React.Component {
 
 
     onSearch(search) {
-        if (search && search.trim() != '') {
+        if (search && search.trim() !== '') {
             this.props.onSearch(search);
         }
     }
@@ -95,7 +95,7 @@ export class Search extends React.Component {
 
         return (
             <div style={{ textAlign: "center", padding: '5px' }}>
-                <form className="form" >
+                <form className="form">
                     <div className="row">
                         <div className="col-12">
                             <input type="text" className="searchInput" id="searchInp" value={this.state.input}

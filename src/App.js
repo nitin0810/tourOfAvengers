@@ -10,9 +10,9 @@ class App extends React.Component {
     super(props);
     console.log(props);
 
-    this.state = {
-      avengers: []
-    };
+    // this.state = {
+    //   avengers: []
+    // };
   }
 
   render() {

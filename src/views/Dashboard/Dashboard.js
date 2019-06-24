@@ -24,7 +24,7 @@ export const Dashboard = ({ avengers, match, location, history }) => {
                         onClick={() => onTopAvengerClick(history, av.id)}
                     >
                         <div className="card">
-                            <img className="card-img-top shortImg" src={av.imgUrl} alt="Avenger" />
+                            <img className="card-img-top shortImg" src={av.imgUrl} alt="Avenger Img" />
                             <div className="card-body cardBody">
                                 <h5 className="card-title">{av.name}</h5>
                             </div>
@@ -55,6 +55,7 @@ const onTopAvengerClick = (history, id) => {
     history.push(`/list/${id}`);
 };
 
+// TODO : optimize below algorithm later
 const giveTopFourAvengers = (avengers) => {
     return avengers.sort((a, b) => isFirstPopularThanSecond(a, b) ? -1 : 1).slice(0, 4);
 };
