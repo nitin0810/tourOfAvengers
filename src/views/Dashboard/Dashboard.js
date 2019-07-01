@@ -23,7 +23,7 @@ export const Dashboard = ({ avengers, match, location, history }) => {
                         style={{ cursor: 'pointer' }} title="Click to view Details"
                         onClick={() => onTopAvengerClick(history, av.id)}
                     >
-                        <div className="card">
+                        <div className="card" style={{minHeight:'150px'}}>
                             <img className="card-img-top shortImg" src={av.imgUrl} alt="Avenger Img" />
                             <div className="card-body cardBody">
                                 <h5 className="card-title">{av.name}</h5>

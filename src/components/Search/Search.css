@@ -1,44 +1,53 @@
-
-.form{
-    position: relative;
-    width: 100%;
-}
-
-.searchInput{
-height: 40px;
+.form {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  margin: 20px 0px 10px 0px;
 
 }
 
-.searchResults{
-    text-align: left;
-    list-style-type: none;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    top: 40px;
-    border: 0.5px solid;
-    background-color: white;
-    z-index: 99;
+.searchInput {
+  height: 40px;
+  width: 25%;
+  transition: width 0.5s;
 }
 
-.searchResultsShow{
+.searchInput:focus {
+  width: 50%;
+}
+
+.searchResults {
+  text-align: left;
+  list-style-type: none;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  top: 40px;
+  border-top: 1px solid var(--theme-color);
+  border-radius: 0 0 2px 2px;
+  box-shadow:  5px 5px 10px grey;
+  background-color: white;
+  z-index: 10;
+}
+
+.searchResultsShow {
   display: block;
 }
 
-.searchResultsHide{
-    display: none;
-  }
+.searchResultsHide {
+  display: none;
+}
 
- .searchResults  .searchResultItem{    
-     padding: 4px 8px;
-     cursor: pointer;
- }
+.searchResults .searchResultItem {
+  padding: 4px 8px;
+  cursor: pointer;
+}
 
- li.searchResultItem:hover {
-background-color:rgb(217, 228, 235);
- }
+li.searchResultItem:hover {
+  background-color:#e3e3e3;
+}
 
- .hoveredSearchResultItem{
-    background-color:rgb(217, 228, 235);
- }
+.hoveredSearchResultItem {
+  background-color:#e3e3e3;
+}

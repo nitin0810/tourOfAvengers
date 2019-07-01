@@ -12,7 +12,7 @@ export class Compare extends React.Component {
             // showComapredAvengers: false
         };
 
-    // this.selectChangeHandler =this.selectChangeHandler.bind(this);
+        // this.selectChangeHandler =this.selectChangeHandler.bind(this);
     }
 
 
@@ -27,42 +27,52 @@ export class Compare extends React.Component {
 
 
     render() {
-        let av1,av2,winnerId;
-        const showComapredAvengers = this.state.first && this.state.second ? true:false;
-        if(showComapredAvengers){
-             av1 = this.props.avengers.find((av)=>av.id === +this.state.first);
-             av2 = this.props.avengers.find((av)=>av.id === +this.state.second);
-             winnerId = this.getWinner(av1, av2);
+        let av1, av2, winnerId = -1,winnerName='';
+        const showComapredAvengers = this.state.first && this.state.second ? true : false;
+        if (showComapredAvengers) {
+            av1 = this.props.avengers.find((av) => av.id === +this.state.first);
+            av2 = this.props.avengers.find((av) => av.id === +this.state.second);
+            winnerId = this.getWinner(av1, av2);
+            winnerName = winnerId ? av1.id ==winnerId ? av1.name:av2.name:'';
         }
         return (
-            <div className="row">
-                <div className="col-6">
-                    <select value={this.state.first}
-                        onChange={(ev) => this.setState({first:ev.target.value})}
-                    >
-                        <option value="" disabled>Select First</option>
-                        {this.props.avengers.map(av =>
-                            <option value={av.id} key={av.id}>{av.name}</option>
-                        )}
-                    </select>
-                    { showComapredAvengers &&
-                        <ComparedAvenger avenger={av1} won={av1.id == winnerId || !winnerId} />
-                    }
+            <div className="pt-2">
+                <div className="alert alert-info">
+                    Winner is calculated based on the Rating, Powers and Dedicated movie of avengers.
+        </div>
+                {showComapredAvengers && <div className="pt-2 text-center" >
+                    <h5>{winnerId ? 'Winner : ' + winnerName:'This is a Draw'}</h5>
                 </div>
+                }
+                <div className="row pt-2">
+                    <div className="col-6">
+                        <select className="form-control mb-2" value={this.state.first}
+                            onChange={(ev) => this.setState({ first: ev.target.value })}
+                        >
+                            <option value="" disabled>Select First</option>
+                            {this.props.avengers.map(av =>
+                                <option  value={av.id} key={av.id} disabled={av.id==this.state.second}>{av.name}</option>
+                            )}
+                        </select>
+                        {showComapredAvengers &&
+                            <ComparedAvenger avenger={av1} won={av1.id == winnerId || !winnerId} />
+                        }
+                    </div>
 
 
-                <div className="col-6">
-                    <select value={this.state.second}
-                        onChange={(ev) => this.setState({ second: ev.target.value })}
-                    >
-                        <option value="" disabled>Select Second</option>
-                        {this.props.avengers.map(av =>
-                            <option value={av.id} key={av.id}>{av.name}</option>
-                        )}
-                    </select>
-                    { showComapredAvengers &&
-                        <ComparedAvenger avenger={av2} won={av2.id == winnerId || !winnerId} />
-                    }
+                    <div className="col-6">
+                        <select className="form-control mb-2" value={this.state.second}
+                            onChange={(ev) => this.setState({ second: ev.target.value })}
+                        >
+                            <option value="" disabled>Select Second</option>
+                            {this.props.avengers.map(av =>
+                                <option value={av.id} key={av.id}  disabled={av.id==this.state.first}>{av.name}</option>
+                            )}
+                        </select>
+                        {showComapredAvengers &&
+                            <ComparedAvenger avenger={av2} won={av2.id == winnerId || !winnerId} />
+                        }
+                    </div>
                 </div>
             </div>
         )

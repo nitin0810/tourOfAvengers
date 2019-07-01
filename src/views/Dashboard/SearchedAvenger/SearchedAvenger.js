@@ -1,7 +1,7 @@
 import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 import { Link } from 'react-router-dom'
-export const SearchedAvenger = ({id, name, imgUrl, rating, history }) => {
+export const SearchedAvenger = ({ id, name, imgUrl, rating, history }) => {
 
     if (!name) {
         return (
@@ -14,16 +14,18 @@ export const SearchedAvenger = ({id, name, imgUrl, rating, history }) => {
     }
 
     return (
-        <div className="card">
-            <img className="card-img-top" style={{ height: '200px' }} src={imgUrl} alt="Avenger pic" />
-            <div className="card-body">
-                <h5 className="card-title">{name}</h5>
-                <StarRatingComponent
-                    name="rate1"
-                    editing={false}
-                    value={rating}
-                />
-                <p>To view more infomation <Link to={`/list/${id}`}>Click Here</Link></p>
+        <div style={{ textAlign: "right" }}>
+            <div className="card" style={{width:'50%',display:'inline-block'}}>
+                <img className="card-img-top" style={{ height: '200px' }} src={imgUrl} alt="Avenger pic" />
+                <div className="card-body">
+                    <h5 className="card-title" style={{margin:0}}>{name}</h5>
+                    <StarRatingComponent
+                        name="rate1"
+                        editing={false}
+                        value={rating}
+                    />
+                    <p>To view more infomation <Link to={`/list/${id}`} >Click Here</Link></p>
+                </div>
             </div>
         </div>
     );

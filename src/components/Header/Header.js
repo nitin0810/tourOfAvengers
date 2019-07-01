@@ -1,10 +1,11 @@
 
 import React from 'react';
-
+import './Header.css';
 export const Header = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <h4 className="navbar-brand" >Tour of Avengers</h4>
-        </nav>
+        <header className="app-header">
+            <img src='imgs/logo.jpg' alt='logo' />
+            <h4>Tour of Avengers</h4>
+        </header>
     );
 }

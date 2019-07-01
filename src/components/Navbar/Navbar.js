@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 const Navs = [
     { route: '/dashboard', name: 'Dashboard' },
     { route: '/list', name: 'Avengers List' },
@@ -9,18 +10,19 @@ const Navs = [
 ];
 export const Navbar = () => {
 
-    const selectedStyle = { color: 'black', backgroundColor: 'azure' };
     return (
-        <ul className="nav justify-content-center">
-            {Navs.map((link, i) => (
-                <li className="nav-item" key={i}>
-                    <NavLink className="nav-link"
-                        activeStyle={selectedStyle}
-                        to={link.route}>
-                        {link.name}
-                    </NavLink>
-                </li>
-            ))}
-        </ul>
+        <nav>
+            <ul className="nav justify-content-center">
+                {Navs.map((link, i) => (
+                    <li  key={i}>
+                        <NavLink className="nav-each"
+                            activeClassName="nav-each-active"
+                            to={link.route}>
+                            {link.name}
+                        </NavLink>
+                    </li>
+                ))}
+            </ul>
+        </nav>
     );
 }

@@ -1,0 +1,23 @@
+.app-header {
+  background-color:var(--theme-color);
+  height: 7vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--theme-color-contrast);
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+}
+
+.app-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.app-header h4 {
+  margin-left: 10px;
+}

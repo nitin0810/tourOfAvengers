@@ -20,7 +20,7 @@ class App extends React.Component {
       <React.Fragment>
         <Header />
         <Navbar />
-        <main className="container">
+        <main className="container" style={{marginTop:'20px'}}>
           <MainContent />
         </main>
       </React.Fragment>

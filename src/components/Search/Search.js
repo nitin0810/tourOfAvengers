@@ -94,18 +94,15 @@ export class Search extends React.Component {
             (this.state.showList && this.state.list.length > 0 ? 'searchResultsShow' : 'searchResultsHide');
 
         return (
-            <div style={{ textAlign: "center", padding: '5px' }}>
                 <form className="form">
-                    <div className="row">
-                        <div className="col-12">
-                            <input type="text" className="searchInput" id="searchInp" value={this.state.input}
+                            <input type="search" className="searchInput form-control" id="searchInp" value={this.state.input}
                             placeholder="Search Avenger"
                                 autoComplete="off"
+                                autoCorrect="off"
                                 onChange={this.inputHandler}
                                 onFocus={(e) => this.setState({ showList: true })}
                             ></input>
-                        </div>
-                    </div>
+                  
                     <ul className={resultClasses}>
                         {this.state.list.map((a, i) => (
                             <SearchResultItem key={a.id}
@@ -115,8 +112,6 @@ export class Search extends React.Component {
                         ))}
                     </ul>
                 </form>
-
-            </div>
         );
     }
 };

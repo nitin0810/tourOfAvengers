@@ -1,0 +1,21 @@
+.nav .nav-each {
+  background: transparent;
+  color: var(--theme-color);
+  font-weight: 400;
+  border: 0.5px solid var(--theme-color);
+  border-radius: 5px;
+  margin: 10px 20px;
+  padding: 5px 20px;
+  text-decoration: none;
+  display: inline-block;
+  min-width: 100px;
+}
+
+.nav .nav-each:hover {
+  box-shadow: 1px 1px;
+}
+
+.nav .nav-each-active {
+  background: var(--theme-color);
+  color: var(--theme-color-contrast);
+}
