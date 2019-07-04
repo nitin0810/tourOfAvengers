@@ -1,0 +1,62 @@
+/* SORT FILTER STYLING */
+.sort-filter {
+  border-radius: 5px;
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  padding: 15px 0px 0px 0px;
+  box-shadow: 5px 5px 10px 0px #dae0e5;
+}
+
+.sort-filter .sort,
+.sort-filter .filter {
+  padding-left: 10px;
+}
+
+.sort-filter .sort h5,
+.sort-filter .filter h5 {
+  display: inline-block;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.sort-filter .sort select {
+  margin-left: 10px;
+}
+
+.sort-filter .filter label {
+  display: block;
+  cursor: pointer;
+  user-select: none;
+}
+.sort-filter .filter label:hover {
+  color: #0062cc ;
+}
+
+/* AVENGER LIST STYLING */
+.avenger-list ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.avenger-list ul li {
+  width: 100%;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.avenger-list ul li:hover {
+  background: #dae0e569  !important;
+}
+
+.avenger-list ul li img {
+  height: 50px;
+  width: 50px;
+  border: 2px solid black;
+  border-radius: 50%;
+  float: left;
+  margin: 0px 10px 0px 0px;
+}
+
+.avenger-list ul li h5 {
+  padding: 0;
+  margin: 0;
+}

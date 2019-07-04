@@ -8,11 +8,6 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(props);
-
-    // this.state = {
-    //   avengers: []
-    // };
   }
 
   render() {
@@ -20,7 +15,7 @@ class App extends React.Component {
       <React.Fragment>
         <Header />
         <Navbar />
-        <main className="container" style={{marginTop:'20px'}}>
+        <main className="container" style={{ marginTop: '20px' }}>
           <MainContent />
         </main>
       </React.Fragment>

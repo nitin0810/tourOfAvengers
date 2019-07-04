@@ -37,11 +37,7 @@ export class Power extends React.Component {
                 : null
             }
 
-                <ul ref={this.powerListRef} style={{
-                    overflow: 'auto',
-                    display: 'block',
-                    maxHeight: '130px'
-                }}>
+                <ul ref={this.powerListRef} >
                     {existingPowers.map((power, index) => (
                         <li key={index}>{power}</li>
                     ))}

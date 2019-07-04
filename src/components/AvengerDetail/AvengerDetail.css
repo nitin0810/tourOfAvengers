@@ -1,0 +1,27 @@
+.avenger-detail p,
+div {
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+}
+
+.avenger-detail p label {
+  cursor: pointer;
+}
+
+.avenger-detail div {
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+}
+
+.avenger-detail div ul {
+  width: 80%;
+  margin-top: 2px;
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 10px #d3d3d3;
+  overflow: auto;
+  max-height: 180px;
+}
+
+.avenger-detail div ul li {
+  padding: 1px;
+}

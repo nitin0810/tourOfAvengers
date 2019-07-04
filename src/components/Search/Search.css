@@ -1,14 +1,13 @@
 .form {
   position: relative;
   width: 100%;
-  text-align: left;
   margin: 20px 0px 10px 0px;
-
 }
 
 .searchInput {
   height: 40px;
   width: 25%;
+  margin: auto;
   transition: width 0.5s;
 }
 
@@ -17,16 +16,16 @@
 }
 
 .searchResults {
-  text-align: left;
   list-style-type: none;
   position: absolute;
   padding: 0;
   margin: 0;
   width: 50%;
   top: 40px;
+  left: 25%;
   border-top: 1px solid var(--theme-color);
   border-radius: 0 0 2px 2px;
-  box-shadow:  5px 5px 10px grey;
+  box-shadow: 5px 8px 10px grey;
   background-color: white;
   z-index: 10;
 }
@@ -45,9 +44,9 @@
 }
 
 li.searchResultItem:hover {
-  background-color:#e3e3e3;
+  background-color: #e3e3e3;
 }
 
 .hoveredSearchResultItem {
-  background-color:#e3e3e3;
+  background-color: #e3e3e3;
 }

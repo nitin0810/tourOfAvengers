@@ -5,7 +5,7 @@ import { ListItem } from '../Listitem/ListItem';
 export const ListOnly = ({ avengers,onAvengerClick,selectedId}) => {
 
     return (
-            <ul style={{margin:0,padding:0}}>
+            <ul >
                 {avengers.map(avenger =>
                     <ListItem key={avenger.id}
                         isSelected={avenger.id === selectedId}

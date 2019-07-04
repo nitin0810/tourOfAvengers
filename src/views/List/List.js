@@ -28,16 +28,22 @@ export const List = ({ avengers, match, location, history, onAvengerDetailEdited
 
     return (
         <React.Fragment>
-            <Sort appliedSort={sortFilterParams.sort}
-                onSortSelect={(sort) => onSortFilter({ ...sortFilterParams, sort }, match, history)} />
-            <Filter appliedFilter={{ earth: sortFilterParams.earth, movie: sortFilterParams.movie }}
-                onFilterSelect={(filters) => onSortFilter({ ...sortFilterParams, ...filters }, match, history)} />
+            <div className="row sort-filter" >
+                <div className="col-xs-12 col-sm-6 sort">
+                    <Sort appliedSort={sortFilterParams.sort}
+                        onSortSelect={(sort) => onSortFilter({ ...sortFilterParams, sort }, match, history)} />
+                </div>
+                <div className="col-xs-12 col-sm-6 filter">
+                    <Filter appliedFilter={{ earth: sortFilterParams.earth, movie: sortFilterParams.movie }} className="col-6 "
+                        onFilterSelect={(filters) => onSortFilter({ ...sortFilterParams, ...filters }, match, history)} />
+                </div>
+            </div>
 
-            <div className="row">
-                <div className="col-xs-12 col-sm-6">
+            <div className="row" style={{paddingTop:'25px'}}>
+                <div className="col-xs-12 col-sm-6 avenger-list">
                     <ListOnly avengers={getFilteredSortedList(avengers, sortFilterParams)}
                         selectedId={selectedId}
-                        onAvengerClick={(id) => onAvengerClick(id, sortFilterParams,match, history)}
+                        onAvengerClick={(id) => onAvengerClick(id, sortFilterParams, match, history)}
                     />
                 </div>
                 <div className=" col-xs-12 col-sm-6">

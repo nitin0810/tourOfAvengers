@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Power } from '../Powers/Powers';
+import './AvengerDetail.css';
 
 export class AvengerDetail extends React.Component {
     constructor(props) {
@@ -62,15 +63,15 @@ export class AvengerDetail extends React.Component {
         return (
             !av ?
                 <div>Avenger with given ID doesn't exists yet. But you can add one.</div> :
-                <div className="card">
+                <div className="card avenger-detail">
                     <img className="card-img-top" style={{ height: '200px' }} src={av.imgUrl} alt="Avenger" />
                     <div className="card-body">
                         <h5 className="card-title">{av.name}</h5>
                         <p className="card-text">{av.description}</p>
                         <p className="card-text"><b>Planet : </b>{av.planet}</p>
                         <p className="card-text"><b>Gender : </b>{av.gender === 'M' ? 'Male' : 'Female'}</p>
-                        <p className="card-text"><b>Has Dedicated Movie : </b>
-                            <input type="checkbox" checked={this.state.hasDedicatedMovie}
+                        <p className="card-text"><label htmlFor="movie"><b>Has Dedicated Movie : </b></label>
+                            <input type="checkbox" checked={this.state.hasDedicatedMovie} id="movie"
                                 name='hasDedicatedMovie'
                                 onChange={(e) => this.setState({ hasDedicatedMovie: e.target.checked })}
                             />
@@ -93,7 +94,7 @@ export class AvengerDetail extends React.Component {
                             allowAdd={true}
                             onAddPower={(newP) => { this.setState((prevstate) => ({ powers: [...prevstate.powers, newP] })) }}
                         />
-                        <button type="button" onClick={this.saveBtnHandler}>Save Changes</button>
+                        <button type="button" className="btn btn-sm btn-primary" onClick={this.saveBtnHandler}>Save Changes</button>
 
 
                     </div>

@@ -14,7 +14,7 @@ export const SearchedAvenger = ({ id, name, imgUrl, rating, history }) => {
     }
 
     return (
-        <div style={{ textAlign: "right" }}>
+        <div style={{ textAlign: "center" }}>
             <div className="card" style={{width:'50%',display:'inline-block'}}>
                 <img className="card-img-top" style={{ height: '200px' }} src={imgUrl} alt="Avenger pic" />
                 <div className="card-body">
