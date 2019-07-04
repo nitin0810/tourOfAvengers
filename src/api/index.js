@@ -6,7 +6,7 @@ export const getAvengers=()=>{
         const random = Math.random();
 
         setTimeout(() => {
-            if(random<0.8){
+            if(random<0.9){
                 res(Avengers);
             }else{
                 rej({msg:'Some error occured while loading'});

@@ -1,0 +1,37 @@
+form.add {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-field {
+  height: 30px;
+  width: 40%;
+  margin: 5px 10px;
+  align-content: center;
+}
+
+label.form-field {
+    font-weight: 500;
+  }
+
+.form-field[type="text"],
+.form-field[type="textarea"] {
+  padding: 2px;
+}
+
+.gender{
+    display: flex;
+    justify-content: space-between;
+}
+
+.gender div{
+    display: inline-block;
+    width: 50%;
+} 
+
+.gender div label{
+margin-left: 5px;
+} 

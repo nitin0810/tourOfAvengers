@@ -1,6 +1,7 @@
 import React from 'react';
 import { Power } from '../../components/Powers/Powers';
 import PropTypes from 'prop-types'
+import './Add.css';
 
 export class Add extends React.Component {
 
@@ -93,82 +94,74 @@ export class Add extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.submitHandler}>
+            <form onSubmit={this.submitHandler} className="add">
 
-                <div>
-                    <label>Name : </label>
-                    <input type="text" value={this.state.name}
-                        placeholder='Enter Name'
-                        name='name'
-                        onChange={this.handleChange}
-                    />
-                </div>
+                <label htmlFor="name" className="form-field">Name : </label>
+                <input type="text" value={this.state.name}
+                    placeholder='Enter Name'
+                    name='name' id="name" className="form-field"
+                    onChange={this.handleChange}
+                />
 
-                <div>
-                    <label>Description : </label>
-                    <textarea type="textarea" value={this.state.description}
-                        placeholder='Enter Description'
-                        name='description'
-                        onChange={this.handleChange}
-                    ></textarea>
-                </div>
+                <label htmlFor="description" className="form-field">Description : </label>
+                <textarea type="textarea" value={this.state.description}
+                    placeholder='Enter Description'
+                    name='description' id="description"
+                    onChange={this.handleChange} className="form-field"
+                ></textarea>
 
-                <div>
-                    <label>Planet : </label>
-                    <input type="text" value={this.state.planet}
-                        placeholder='Enter Planet'
-                        name='planet'
-                        onChange={this.handleChange}
-                    />
-                </div>
+                <label htmlFor="planet" className="form-field">Planet : </label>
+                <input type="text" value={this.state.planet}
+                    placeholder='Enter Planet'
+                    name='planet' id="planet"
+                    onChange={this.handleChange} className="form-field"
+                />
 
-                <div>
-                    <label >Gender : </label>
-                    <input type="radio" id="m" checked={this.state.gender === 'M'}
-                        value='M'
-                        name='gender'
-                        onChange={this.handleChange}
-                    /><label htmlFor="m">Male</label>
-                    <input type="radio" id="f" checked={this.state.gender === 'F'}
-                        value='F'
-                        name='gender'
-                        onChange={this.handleChange}
-                    /><label htmlFor="f">Female</label>
-                </div>
-
-                <div>
-                    <label htmlFor="hasMovie">Has Dedicated Movie ? : </label>
-                    <input type="checkbox" id="hasMovie" checked={this.state.hasDedicatedMovie}
-                        name='hasDedicatedMovie'
-                        onChange={this.handleChange}
-                    />
-                </div>
-
-                <div>
-                    <label>Rating : </label>
-                    <select value={this.state.rating}
-                        name='rating'
-                        onChange={this.handleChange}
-                    >
-                        <option value='0' disabled>Select Rating</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
-                        <option value='5'>5</option>
-                    </select>
-                </div>
-
-                <div>
-                    <input type="file" accept="image/*" style={{ display: 'none' }} ref={this.fileRef} onChange={this.handleImgUpload}></input>
-                    <div style={{ height: '80px', width: '80px' }}>
-                        <img src={this.state.imgUrl || 'imgs/defaultPic.jpg'} alt="Avenger Img"
-                            style={{ height: '100%', width: '100%', border: '2px solid black', borderRadius: '50%' }} />
+                <label className="form-field">Gender : </label>
+                <div className="form-field gender">
+                    <div >
+                        <input type="radio" id="m" checked={this.state.gender === 'M'}
+                            value='M'
+                            name='gender'
+                            onChange={this.handleChange}
+                        /><label htmlFor="m">Male</label>
                     </div>
-                    <button type="button"
-                        onClick={() => this.fileRef.current.click()}>
-                        {this.state.imgUrl ? 'Change Image' : 'Upload Image'}</button>
+                    <div >
+                        <input type="radio" id="f" checked={this.state.gender === 'F'}
+                            value='F'
+                            name='gender'
+                            onChange={this.handleChange}
+                        /><label htmlFor="f">Female</label>
+                    </div>
                 </div>
+                <label htmlFor="hasMovie" className="form-field">Has Dedicated Movie ?  </label>
+                <input type="checkbox" id="hasMovie" checked={this.state.hasDedicatedMovie}
+                    name='hasDedicatedMovie'
+                    onChange={this.handleChange} className="form-field"
+                />
+
+                <label htmlFor="rating" className="form-field">Rating : </label>
+                <select value={this.state.rating}
+                    name='rating' id="rating"
+                    onChange={this.handleChange} className="form-field"
+                >
+                    <option value='0' disabled>Select Rating</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                </select>
+
+                <input type="file" accept="image/*" style={{ display: 'none' }} ref={this.fileRef} onChange={this.handleImgUpload}></input>
+                <button type="button" className="form-field"
+                    onClick={() => this.fileRef.current.click()}>
+                    {this.state.imgUrl ? 'Change Image' : 'Upload Image'}</button>
+                <div style={{ height: '80px', width: '80px' }} className="form-field">
+                    <img src={this.state.imgUrl || 'imgs/defaultPic.jpg'} alt="Avenger Img"
+                        style={{ height: '100%', width: '100%', border: '2px solid black', borderRadius: '50%' }} />
+                </div>
+
 
                 <div>
                     <label>Powers :  </label>
