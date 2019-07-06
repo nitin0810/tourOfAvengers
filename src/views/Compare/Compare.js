@@ -41,7 +41,7 @@ export class Compare extends React.Component {
                     Winner is calculated based on the Rating, Powers and Dedicated movie of avengers.
         </div>
                 {showComapredAvengers && <div className="pt-2 text-center" >
-                    <h5>{winnerId ? 'Winner : ' + winnerName:'This is a Draw'}</h5>
+                    <h3 style={{fontWeight:'600'}}>{winnerId ? 'Winner : ' + winnerName:'This is a Draw'}</h3>
                 </div>
                 }
                 <div className="row pt-2">

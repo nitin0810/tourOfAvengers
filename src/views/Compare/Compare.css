@@ -1,25 +1,39 @@
-
-
-.cmp-property{
-display: inline;
+.cmp-property {
+  display: inline;
 }
 
-.cmp-value{
-    float: right;;
+.cmp-value {
+  float: right;
+  margin: 0;
 }
 
-.av-cmp-card{
-padding: 2px;
-border: 2px solid;
+.av-cmp-card {
+  padding: 2px;
+  border: 2px solid;
+  width: 70%;
+  margin: auto;
 }
 
-.av-cmp-card-winner{
-    margin-top: 10px;
-    border-color: green;
-    box-shadow: 0px 10px 10px 0px;
-    transform: scale(1.05)
+.av-cmp-card-winner {
+  margin-top: 25px;
+  border-color: green;
+  box-shadow: 0px 10px 10px 0px;
+  /* transform: scale(1.05); */
+  animation: winner-anim 2s infinite;
 }
 
-.av-cmp-card-loser{
-    border-color: red;
+@keyframes winner-anim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.av-cmp-card-loser {
+  border-color: red;
 }

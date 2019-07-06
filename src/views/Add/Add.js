@@ -38,6 +38,7 @@ export class Add extends React.Component {
     }
 
     handleImgUpload(e) {
+        if (!e.target.files.length) { return; }
         const file = e.target.files[0];
         if (this.state.imgUrl) {
             window.URL.revokeObjectURL(this.state.imgUrl);
@@ -54,7 +55,7 @@ export class Add extends React.Component {
 
     submitHandler(e) {
         e.preventDefault();
-        const err = this.showInvalidMsg();
+        const err = this.giveInvalidMsg();
         if (err) {
             this.setState({ invalidMsg: err });
         } else {
@@ -72,14 +73,17 @@ export class Add extends React.Component {
             });
             // since invalidMsg property is not needed in newAvengerInfo
             // hence make a new copy and delete it from that
+            // in below line, this.state still contains the old info as this.setState()
+            // is asynchronous and will be called after the current stack gets empty
             const newAvengerData = Object.assign({}, this.state);
             delete newAvengerData.invalidMsg;
             // add new avenger to avengers list present in parent component
             this.props.onAddAvenger(newAvengerData);
+            alert('Avenger added successfully');
         }
     }
 
-    showInvalidMsg() {
+    giveInvalidMsg() {
         for (const x in this.state) {
             if (x !== 'invalidMsg' && x !== 'powers' && x !== 'hasDedicatedMovie' && x !== 'imgUrl') {
                 if (!this.state[x]) {
@@ -92,9 +96,11 @@ export class Add extends React.Component {
         return '';
     }
 
+
     render() {
+        
         return (
-            <form onSubmit={this.submitHandler} className="add">
+            <form onSubmit={this.submitHandler} className="add" >
 
                 <label htmlFor="name" className="form-field">Name : </label>
                 <input type="text" value={this.state.name}
@@ -134,11 +140,13 @@ export class Add extends React.Component {
                         /><label htmlFor="f">Female</label>
                     </div>
                 </div>
-                <label htmlFor="hasMovie" className="form-field">Has Dedicated Movie ?  </label>
-                <input type="checkbox" id="hasMovie" checked={this.state.hasDedicatedMovie}
-                    name='hasDedicatedMovie'
-                    onChange={this.handleChange} className="form-field"
-                />
+                <label htmlFor="hasMovie" className="form-field movie-label">Has Dedicated Movie ?  </label>
+                <div className="form-field">
+                    <input type="checkbox" id="hasMovie" checked={this.state.hasDedicatedMovie}
+                        name='hasDedicatedMovie'
+                        onChange={this.handleChange}
+                    />
+                </div>
 
                 <label htmlFor="rating" className="form-field">Rating : </label>
                 <select value={this.state.rating}
@@ -154,17 +162,19 @@ export class Add extends React.Component {
                 </select>
 
                 <input type="file" accept="image/*" style={{ display: 'none' }} ref={this.fileRef} onChange={this.handleImgUpload}></input>
-                <button type="button" className="form-field"
-                    onClick={() => this.fileRef.current.click()}>
-                    {this.state.imgUrl ? 'Change Image' : 'Upload Image'}</button>
-                <div style={{ height: '80px', width: '80px' }} className="form-field">
+                <div className="form-field">
+
+                    <button type="button" className=" btn btn-primary"
+                        onClick={() => this.fileRef.current.click()}>
+                        {this.state.imgUrl ? 'Change Image' : 'Upload Image'}</button>
+                </div>
+                <div className="form-field">
                     <img src={this.state.imgUrl || 'imgs/defaultPic.jpg'} alt="Avenger Img"
-                        style={{ height: '100%', width: '100%', border: '2px solid black', borderRadius: '50%' }} />
+                    />
                 </div>
 
-
-                <div>
-                    <label>Powers :  </label>
+                <label className="form-field">Powers :  </label>
+                <div className="form-field">
                     <Power powers={this.state.powers}
                         allowAdd={true}
                         onAddPower={this.onAddPowerHandler}
@@ -172,14 +182,14 @@ export class Add extends React.Component {
                 </div>
 
                 {this.state.invalidMsg ?
-                    <div className="alert alert-danger">
+                    <div className="alert alert-danger" style={{ width: '70%', textAlign: 'center' }}>
                         {this.state.invalidMsg}
                     </div>
                     : null
                 }
 
-                <div>
-                    <button type="submit">Submit</button>
+                <div style={{ width: '70%', textAlign: 'center' }}>
+                    <button style={{ width: '50%' }} type="submit" className='btn btn-success'>Submit</button>
                 </div>
             </form>
         );

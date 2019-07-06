@@ -24,7 +24,9 @@ const ComparedAvenger = ({ avenger, won }) => {
                 </div>
                 <div>
                     <h6 className="cmp-property">Total Powers : </h6>
-                    <span className="cmp-value">{avenger.powers.length}</span>
+                    <div className="cmp-value" style={{textAlign:'right'}}>
+                    <span >{avenger.powers.length}</span>
+                    </div>
                 </div>
             </div>
         </div>

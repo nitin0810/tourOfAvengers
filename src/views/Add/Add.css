@@ -7,31 +7,47 @@ form.add {
 }
 
 .form-field {
-  height: 30px;
+  /* height: 30px; */
   width: 40%;
-  margin: 5px 10px;
+  margin: 5px 10px;  
   align-content: center;
 }
 
 label.form-field {
-    font-weight: 500;
-  }
+  font-weight: 500;
+}
 
 .form-field[type="text"],
 .form-field[type="textarea"] {
   padding: 2px;
 }
 
-.gender{
-    display: flex;
-    justify-content: space-between;
+.gender {
+  display: flex;
+  justify-content: space-between;
 }
 
-.gender div{
-    display: inline-block;
-    width: 50%;
-} 
+.gender div {
+  display: inline-block;
+  width: 50%;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  transform: scale(1.5);
+}
+.gender div label {
+  margin-left: 5px;
+  cursor: pointer;
+  user-select: none;
+}
 
-.gender div label{
-margin-left: 5px;
-} 
+.movie-label{
+  user-select: none;
+}
+
+.form-field img{
+  height: 80px;
+   width: 80px;
+   border: 2px solid black;
+   border-radius: 50% ;
+}

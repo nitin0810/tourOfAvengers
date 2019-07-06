@@ -42,20 +42,20 @@ export class MainContent extends React.Component {
     fetchData() {
         this.setState({ loading: true, errMsg: '' });
         getAvengers()
-            .then(avengers => this.setState({ avengers }))
-            .catch(err => this.setState({ errMsg: err.msg || JSON.stringify(err) }))
-            .then(() => this.setState({ loading: false }));
+            .then(avengers => this.setState({ avengers, loading: false }))
+            .catch(err => this.setState({ errMsg: err.msg || JSON.stringify(err), loading: false }));
     }
 
     render() {
+
         if (this.state.loading) {
-            return <p>Loading ...</p>;
+            return <h5>Loading ...<i className="fa fa-spin fa-spinner"></i></h5>;
         }
         if (this.state.errMsg) {
             return (
-                <div>
-                    <p>Oops ..! {this.state.errMsg}</p>
-                    <button className="btn btn-clear btn-small" onClick={this.fetchData.bind(this)}>Try Again</button>
+                <div style={{ color: 'red', textAlign: 'center' }}>
+                    <h6 >Oops ..! {this.state.errMsg}</h6>
+                    <button className="btn btn-clear btn-danger btn-sm" onClick={this.fetchData.bind(this)}>Try Again</button>
                 </div>
             )
         }
@@ -73,7 +73,7 @@ export class MainContent extends React.Component {
                         <List avengers={this.state.avengers} onAvengerDetailEdited={this.handleAvengerEdit} {...props} />} >
                     </Route>
                     <Route path="/add" render={(props) => <Add onAddAvenger={this.addNewAvenger} {...props} />} ></Route>
-                    <Route path="/compare" render={(props)=><Compare avengers={this.state.avengers}/>} ></Route>
+                    <Route path="/compare" render={(props) => <Compare avengers={this.state.avengers} />} ></Route>
                     <Route path="/" exact render={(props) => (
                         <Redirect to="/dashboard" {...props} ></Redirect>
                     )} ></Route>

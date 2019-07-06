@@ -7,7 +7,6 @@ import { SearchedAvenger } from './SearchedAvenger/SearchedAvenger';
 let searchComponentKey = 0;
 
 export const Dashboard = ({ avengers, match, location, history }) => {
-    console.log(avengers);
 
 
     const top4 = giveTopFourAvengers(avengers);

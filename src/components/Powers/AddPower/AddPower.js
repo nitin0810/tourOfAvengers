@@ -31,7 +31,7 @@ export class AddPower extends React.Component {
                 <input  style={{width:'80%'}} type="text" value={this.state.newPower}
                     placeholder='Add Power' ref={this.inputRef}
                     onChange={this.handleChange} />
-                <button  className="btn btn-primary" type='button' onClick={this.handleAddPower}>Add</button>
+                <button  className="btn btn-sm btn-primary" type='button' onClick={this.handleAddPower}>Add</button>
             </div>
         );
     }

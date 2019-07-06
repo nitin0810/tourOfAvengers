@@ -7,6 +7,14 @@ export class Power extends React.Component {
     constructor(props) {
         super(props);
         this.powerListRef = React.createRef();
+        this.listStyles = {
+            width: '80%',
+            listStyleType: 'decimal',
+            maxHeight: '200px',
+            overflow: 'auto',
+            border: '1px solid rgb(0,0,0,0.1)',
+            boxShadow: '5px 5px 10px #d3d3d3',
+        };
     }
 
     componentDidMount() {
@@ -33,11 +41,11 @@ export class Power extends React.Component {
         const existingPowers = this.props.powers;
         return (
             <div>{this.props.allowAdd ?
-                <AddPower onAddPower={(addedPower)=>this.props.onAddPower(addedPower)}/>
+                <AddPower onAddPower={(addedPower) => this.props.onAddPower(addedPower)} />
                 : null
             }
 
-                <ul ref={this.powerListRef} >
+                <ul ref={this.powerListRef} style={this.listStyles} >
                     {existingPowers.map((power, index) => (
                         <li key={index}>{power}</li>
                     ))}

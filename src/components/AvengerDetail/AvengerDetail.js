@@ -70,8 +70,8 @@ export class AvengerDetail extends React.Component {
                         <p className="card-text">{av.description}</p>
                         <p className="card-text"><b>Planet : </b>{av.planet}</p>
                         <p className="card-text"><b>Gender : </b>{av.gender === 'M' ? 'Male' : 'Female'}</p>
-                        <p className="card-text"><label htmlFor="movie"><b>Has Dedicated Movie : </b></label>
-                            <input type="checkbox" checked={this.state.hasDedicatedMovie} id="movie"
+                        <p className="card-text"><label htmlFor="hasMovie"><b>Has Dedicated Movie : </b></label>
+                            <input type="checkbox" checked={this.state.hasDedicatedMovie} id="hasMovie"
                                 name='hasDedicatedMovie'
                                 onChange={(e) => this.setState({ hasDedicatedMovie: e.target.checked })}
                             />
