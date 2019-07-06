@@ -1,13 +1,13 @@
 {
-  "main.css": "/tour-of-avengers/static/css/main.5cd4cda4.chunk.css",
-  "main.js": "/tour-of-avengers/static/js/main.d4b60f3c.chunk.js",
-  "main.js.map": "/tour-of-avengers/static/js/main.d4b60f3c.chunk.js.map",
-  "static/js/1.a2b3d365.chunk.js": "/tour-of-avengers/static/js/1.a2b3d365.chunk.js",
-  "static/js/1.a2b3d365.chunk.js.map": "/tour-of-avengers/static/js/1.a2b3d365.chunk.js.map",
-  "runtime~main.js": "/tour-of-avengers/static/js/runtime~main.8665b2b0.js",
-  "runtime~main.js.map": "/tour-of-avengers/static/js/runtime~main.8665b2b0.js.map",
-  "static/css/main.5cd4cda4.chunk.css.map": "/tour-of-avengers/static/css/main.5cd4cda4.chunk.css.map",
-  "index.html": "/tour-of-avengers/index.html",
-  "precache-manifest.383e39a893846ba219d2ed13e7c8b7c9.js": "/tour-of-avengers/precache-manifest.383e39a893846ba219d2ed13e7c8b7c9.js",
-  "service-worker.js": "/tour-of-avengers/service-worker.js"
+  "main.css": "/tourOfAvengers/static/css/main.5cd4cda4.chunk.css",
+  "main.js": "/tourOfAvengers/static/js/main.d4b60f3c.chunk.js",
+  "main.js.map": "/tourOfAvengers/static/js/main.d4b60f3c.chunk.js.map",
+  "static/js/1.a2b3d365.chunk.js": "/tourOfAvengers/static/js/1.a2b3d365.chunk.js",
+  "static/js/1.a2b3d365.chunk.js.map": "/tourOfAvengers/static/js/1.a2b3d365.chunk.js.map",
+  "runtime~main.js": "/tourOfAvengers/static/js/runtime~main.e4d7d668.js",
+  "runtime~main.js.map": "/tourOfAvengers/static/js/runtime~main.e4d7d668.js.map",
+  "static/css/main.5cd4cda4.chunk.css.map": "/tourOfAvengers/static/css/main.5cd4cda4.chunk.css.map",
+  "index.html": "/tourOfAvengers/index.html",
+  "precache-manifest.81a4ce4dfda63a33aa80a1eee402d63b.js": "/tourOfAvengers/precache-manifest.81a4ce4dfda63a33aa80a1eee402d63b.js",
+  "service-worker.js": "/tourOfAvengers/service-worker.js"
 }
