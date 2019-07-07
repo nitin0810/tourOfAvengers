@@ -1,13 +1,13 @@
 {
-  "main.css": "/tourOfAvengers/static/css/main.5cd4cda4.chunk.css",
-  "main.js": "/tourOfAvengers/static/js/main.d4b60f3c.chunk.js",
-  "main.js.map": "/tourOfAvengers/static/js/main.d4b60f3c.chunk.js.map",
-  "static/js/1.a2b3d365.chunk.js": "/tourOfAvengers/static/js/1.a2b3d365.chunk.js",
-  "static/js/1.a2b3d365.chunk.js.map": "/tourOfAvengers/static/js/1.a2b3d365.chunk.js.map",
-  "runtime~main.js": "/tourOfAvengers/static/js/runtime~main.e4d7d668.js",
-  "runtime~main.js.map": "/tourOfAvengers/static/js/runtime~main.e4d7d668.js.map",
-  "static/css/main.5cd4cda4.chunk.css.map": "/tourOfAvengers/static/css/main.5cd4cda4.chunk.css.map",
-  "index.html": "/tourOfAvengers/index.html",
-  "precache-manifest.81a4ce4dfda63a33aa80a1eee402d63b.js": "/tourOfAvengers/precache-manifest.81a4ce4dfda63a33aa80a1eee402d63b.js",
-  "service-worker.js": "/tourOfAvengers/service-worker.js"
+  "main.css": "https://nitin0810.github.io/tourOfAvengers/static/css/main.5cd4cda4.chunk.css",
+  "main.js": "https://nitin0810.github.io/tourOfAvengers/static/js/main.8271638c.chunk.js",
+  "main.js.map": "https://nitin0810.github.io/tourOfAvengers/static/js/main.8271638c.chunk.js.map",
+  "static/js/1.a2b3d365.chunk.js": "https://nitin0810.github.io/tourOfAvengers/static/js/1.a2b3d365.chunk.js",
+  "static/js/1.a2b3d365.chunk.js.map": "https://nitin0810.github.io/tourOfAvengers/static/js/1.a2b3d365.chunk.js.map",
+  "runtime~main.js": "https://nitin0810.github.io/tourOfAvengers/static/js/runtime~main.95ff7b75.js",
+  "runtime~main.js.map": "https://nitin0810.github.io/tourOfAvengers/static/js/runtime~main.95ff7b75.js.map",
+  "static/css/main.5cd4cda4.chunk.css.map": "https://nitin0810.github.io/tourOfAvengers/static/css/main.5cd4cda4.chunk.css.map",
+  "index.html": "https://nitin0810.github.io/tourOfAvengers/index.html",
+  "precache-manifest.34422befe1a7e9a59cfb9ed550364a26.js": "https://nitin0810.github.io/tourOfAvengers/precache-manifest.34422befe1a7e9a59cfb9ed550364a26.js",
+  "service-worker.js": "https://nitin0810.github.io/tourOfAvengers/service-worker.js"
 }
