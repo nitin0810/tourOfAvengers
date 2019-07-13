@@ -11,16 +11,21 @@ I have tried to implement most of the core React concepts in this project, howev
 2) The app simulates the data being fetched from server. This is a complete client side based app having no server involved.
 3) The app contains the data of 10 avengers. More avenger can be added. However, that added data will be available only untill the browser is refreshed.
 4) The styling has been kept minimum as it was more about implmenting react. For styling, css variables (which is one of the new features on web) has been used in order to just give it a try.
-5) Build process has been customized a bit to reduce the repeatitive task. After the normal build process (which is run using 'npm run build'), a custom script copies the content of index.html generated in /build folder to a file 404.html in the same /build folder. It has been done to handle the browser refresh when app is loaded on a hoisting service like github pages. The server returns the 404.html file as it does note recongize the client side routing. Morever two npm scripts : 'predeploy' and 'deploy' has been used to cover the whole process of building to deployment via a single command.
+5) Build process has been customized a bit to reduce the repeatitive task. After the normal build process (which is run using 'npm run build'), a custom script copies the content of index.html generated in /build folder to a file 404.html in the same /build folder. It has been done to handle the browser refresh when app is loaded on a hosting service like github pages. The server returns the 404.html file as it does note recongize the client side routing. Morever two npm scripts : 'predeploy' and 'deploy' has been used to cover the whole process of building to deployment via a single command.
 
 ### Future Additions and improvements
 
 1) Extend the app by adding a couple of more features.
 2) Also implement the server side logic so that the new avengers added or edited can be persisted in the database.
-3) Use Saas to speed up the styling and intergrate it with the build flow.
+3) Use Saas to speed up the styling and integrate it with the build flow.
 4) Use Typescript in order to catch errors while developing and increase the developer productivity by leveraging the editor tools.
 4) Use Redux to manage the state of the app.
+5) Write some test scripts.
 
+
+### `npm deploy`
+
+A single command to build, create 404.html page in build folder, and deploy to github pages. 
 
 ### `npm start`
 
