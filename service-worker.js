@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "https://nitin0810.github.io/tourOfAvengers/precache-manifest.34422befe1a7e9a59cfb9ed550364a26.js"
+  "https://nitin0810.github.io/tourOfAvengers/precache-manifest.0988ac9f3f084d402e23fe25a70d374e.js"
 );
 
 workbox.clientsClaim();
@@ -30,5 +30,5 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerNavigationRoute("https://nitin0810.github.io/tourOfAvengers/index.html", {
   
-  blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
+  blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
